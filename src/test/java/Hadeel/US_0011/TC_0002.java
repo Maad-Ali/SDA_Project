@@ -1,18 +1,22 @@
 package Hadeel.US_0011;
 
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 
-public class TC_0001 {
+public class TC_0002 {
     public static String email = "pehicej808@bsomek.com";
     public static String password = "tAORf9zTeyKSP4R";
     public static String name = "Human Resource";
@@ -50,9 +54,6 @@ public class TC_0001 {
         //<add new unit>
         WebElement AddNewUnit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-info float-end text-white']")));
         AddNewUnit.click();
-        //<write a name>
-        WebElement WriteAname = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
-        WriteAname.sendKeys(name);
         //<write short name>
         WebElement WriteAshortName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[2]")));
         WriteAshortName.sendKeys(Shortname);
@@ -68,9 +69,9 @@ public class TC_0001 {
         WebElement saveTheValues = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-info text-white px-3']")));
         saveTheValues.click();
 
-        //<successful message appear >
-        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']")));
-        assertTrue(successMessage.isDisplayed(), "Success message is not displayed after adding the unit.");
+        //<unsuccessful message appear >
+        WebElement EmptyName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='text-danger']")));
+        assertTrue(EmptyName.isDisplayed(), "Unsuccessful message is not displayed");
 
     }
 

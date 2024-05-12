@@ -1,42 +1,40 @@
-package Hadeel.US_0012;
-
+package Hadeel.US_0011;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 
-
-public class TC_0001 {
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
-    public static String name = "Research and development";
-    public static String Editname = "Information Technology";
-    public static String EditShortname = "IT";
-    public static String EditDescribe = "Information technology is a set of related fields that encompass computer systems, software, programming languages and data and information processing and storage.";
+public class TC_0004 {
     WebDriver driver;
     WebDriverWait wait;
 
+    public static String email = "pehicej808@bsomek.com";
+    public static String password = "tAORf9zTeyKSP4R";
+
+    public static String name = "Human Resource";
+    public static String Shortname = "HR";
+    public static String Describe = "The HR (Human Resources) department is responsible for managing the employee life cycle";
+    public static String Editname = "Quality Assurance";
+    public static String EditShortname = "QA";
+    public static String EditDescribe = "Quality assurance is a broad process for preventing quality failures. The QA team is involved in all stages of a product's development: production, testing, packaging, and delivery.";
 
     @BeforeClass
     public void beforeMethod() {
         driver = new EdgeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Initialize WebDriverWait with a timeout of 10 seconds
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Initialize WebDriverWait with a timeout of 10 seconds
     }
 
     @Test
@@ -56,12 +54,35 @@ public class TC_0001 {
         //<click on remote unit>
         WebElement clickOnRemoteUnit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit);
-        //<click on any Unit here : >
-        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1555']")));
-        clickOnTheHR.click();
-        //<click on Edit the Unit>
-        WebElement clickOnEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-info float-end text-white']")));
-        clickOnEdit.click();
+        //<add new unit>
+        WebElement AddNewUnit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-info float-end text-white']")));
+        AddNewUnit.click();
+        //<write a name>
+        WebElement WriteAname = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
+        WriteAname.sendKeys(name);
+        //<write short name>
+        WebElement WriteAshortName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[2]")));
+        WriteAshortName.sendKeys(Shortname);
+        //<write a description>
+        WebElement WriteAsescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[3]")));
+        WriteAsescription.sendKeys(Describe);
+        //<select dep type>
+        WebElement selectDeptTypeDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class=' css-19bb58m'])[1]")));
+        selectDeptTypeDropdown.click();
+        WebElement optionTeam = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Remote Unit']")));
+        optionTeam.click();
+        //<save the values>
+        WebElement saveTheValues = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-info text-white px-3']")));
+        saveTheValues.click();
+
+        //<successful message appear >
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']")));
+        assertTrue(successMessage.isDisplayed(), "Success message is not displayed after adding the unit.");
+
+        //-------------------------------------------------------------------------------------------------------------------
+
+        WebElement ClickOnEdit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-outline-dark']")));
+        ClickOnEdit.click();
         //<write a name>
         WebElement EditName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
         EditName.clear();
@@ -86,6 +107,7 @@ public class TC_0001 {
         //<successful message appear >
         WebElement successEditMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']")));
         assertTrue(successEditMessage.isDisplayed(), "Success message is not displayed after adding the unit.");
+
     }
 
     @AfterMethod
@@ -93,3 +115,4 @@ public class TC_0001 {
         driver.quit();
     }
 }
+

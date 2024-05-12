@@ -1,6 +1,5 @@
 package Hadeel.US_0012;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,16 +16,16 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
-
-public class TC_0001 {
+public class TC_0004 {
     public static String email = "pehicej808@bsomek.com";
     public static String password = "tAORf9zTeyKSP4R";
     public static String name = "Research and development";
     public static String Editname = "Information Technology";
     public static String EditShortname = "IT";
     public static String EditDescribe = "Information technology is a set of related fields that encompass computer systems, software, programming languages and data and information processing and storage.";
+    public static String UnitPath = "//a[@href='#/department/1715254322840616/1543']";
     WebDriver driver;
     WebDriverWait wait;
 
@@ -36,7 +35,7 @@ public class TC_0001 {
         driver = new EdgeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Initialize WebDriverWait with a timeout of 10 seconds
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
     }
 
     @Test
@@ -57,37 +56,37 @@ public class TC_0001 {
         WebElement clickOnRemoteUnit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit);
         //<click on any Unit here : >
-        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1555']")));
+        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UnitPath)));
         clickOnTheHR.click();
         //<click on Edit the Unit>
         WebElement clickOnEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-info float-end text-white']")));
         clickOnEdit.click();
-        //<write a name>
-        WebElement EditName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
-        EditName.clear();
-        EditName.sendKeys(Editname);
-        //<write short name>
-        WebElement EditShortName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[2]")));
-        EditShortName.clear();
-        EditShortName.sendKeys(EditShortname);
-        //<write a description>
-        WebElement EditDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[3]")));
-        EditDescription.clear();
-        EditDescription.sendKeys(EditDescribe);
-        //<select dep type>
-        WebElement EditselectDeptTypeDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class=' css-19bb58m'])[1]")));
-        EditselectDeptTypeDropdown.click();
-        WebElement optionTeamEdited = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Team']")));
-        optionTeamEdited.click();
-        //<save the values>
-        WebElement saveTheEditValues = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-info text-white px-3']")));
-        saveTheEditValues.click();
+        driver.navigate().refresh();
+        //<click on delete>
+        WebElement delete = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-danger text-light fw-bold float-end']")));
+        delete.click();
+        WebElement confirm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-danger']")));
+        confirm.click();
+        //make sure it gone
+        WebElement clickOnArrowElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divCollapseUncollapse']")));
+        clickOnArrowElement1.click();
+        //<click on remote unit>
+        WebElement clickOnRemoteUnit1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit1);
 
-        //<successful message appear >
-        WebElement successEditMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']")));
-        assertTrue(successEditMessage.isDisplayed(), "Success message is not displayed after adding the unit.");
+        boolean unitDeleted = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(UnitPath)));
+
+        // Log the status of the unit
+        if (unitDeleted) {
+            System.out.println("Unit is deleted as expected.");
+        } else {
+            System.out.println("Unit is still present in the DOM.");
+        }
+
+        // Assert that the unit is deleted
+        assertTrue(unitDeleted, "The unit should be deleted.");
+
     }
-
     @AfterMethod
     public void quitTabs() {
         driver.quit();
