@@ -57,13 +57,9 @@ public class US0019 {
 
 
         Thread.sleep(3000);
-        // Define the locator for the buttons with the specified class attribute
         By buttonLocator = By.xpath("//button[contains(@class,'btn btn-light border w-100 mw-100 text-start')]");
-
-        // Find all buttons with the specified class attribute
         List<WebElement> buttons = driver.findElements(buttonLocator);
 
-        // Iterate over each button and test its clickability
         for (WebElement button : buttons) {
             // Wait for the button to be clickable
             WebElement clickableButton = wait.until(ExpectedConditions.elementToBeClickable(button));
@@ -77,7 +73,7 @@ public class US0019 {
 
     @AfterClass
     public void AfterClass() {
-        //terminating the session
+        //terminating session
         driver.quit();
     }
 

@@ -62,7 +62,7 @@ public class US0020 {
 
     @AfterClass
     public void AfterClass() {
-        //terminating the session
+        //terminating session
         driver.quit();
     }
 }
