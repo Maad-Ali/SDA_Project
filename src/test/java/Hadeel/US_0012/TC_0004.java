@@ -25,7 +25,7 @@ public class TC_0004 {
     public static String Editname = "Information Technology";
     public static String EditShortname = "IT";
     public static String EditDescribe = "Information technology is a set of related fields that encompass computer systems, software, programming languages and data and information processing and storage.";
-    public static String UnitPath = "//a[@href='#/department/1715254322840616/1543']";
+    public static String UnitPath = "//a[@href='#/department/1715254322840616/1592']";
     WebDriver driver;
     WebDriverWait wait;
 

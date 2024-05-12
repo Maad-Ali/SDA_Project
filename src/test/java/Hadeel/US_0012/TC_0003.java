@@ -50,7 +50,7 @@ public class TC_0003 {
         WebElement clickOnRemoteUnit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit);
         //<click on any Unit here : >
-        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1543']")));
+        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1592']")));
         clickOnTheHR.click();
         //<click on Edit the Unit>
         WebElement clickOnEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-info float-end text-white']")));
