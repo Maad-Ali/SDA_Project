@@ -1,4 +1,4 @@
-package US_0006;
+package Enas.US_0006;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -66,16 +66,17 @@ public class TC_0001 {
         //Submit the changes to update the company details.
         WebElement SaveButton = driver.findElement(By.xpath("//button[normalize-space()='Save']"));
         SaveButton.click();
-//
-//        // Assert that the save button is disabled
-//        Assert.assertFalse(SaveButton.isEnabled(), "Save button is enabled when fields are empty.");
-//
-//        // Assert that the error message is displayed
-//        WebElement errorMessage = driver.findElement(By.xpath("//span[@class='text-danger']"));
-//        String expectedErrorMessage = "Please enter a name for the company";
-//        String actualErrorMessage = errorMessage.getText();
-//        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message is not displayed correctly.");
-//
+
+        // Assert that the error message is displayed
+        WebElement errorMessage = driver.findElement(By.xpath("//span[@class='text-danger']"));
+        String expectedErrorMessage = "Please enter a name for company";
+        String actualErrorMessage = errorMessage.getText();
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message is not displayed correctly.");
+
+
+        // Assert that the save button is disabled
+        boolean isSaveButtonEnabled = SaveButton.isEnabled();
+        Assert.assertEquals(isSaveButtonEnabled, true, "Save button is disabled when fields are empty.");
 
     }
 
@@ -85,7 +86,7 @@ public class TC_0001 {
 
     @AfterClass
     public void afterMethod() {
-       // driver.quit();
+       driver.quit();
     }
 
 }

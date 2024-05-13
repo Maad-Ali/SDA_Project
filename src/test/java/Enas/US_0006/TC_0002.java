@@ -1,4 +1,4 @@
-package US_0006;
+package Enas.US_0006;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
