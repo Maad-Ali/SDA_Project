@@ -1,37 +1,45 @@
 package Hadeel.US_0011;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 
-public class TC_0001 { //commment
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
-    public static String name = "Human Resource";
-    public static String Shortname = "HR";
-    public static String Describe = "The HR (Human Resources) department is responsible for managing the employee life cycle";
+public class TC_0006 {
     WebDriver driver;
     WebDriverWait wait;
 
+    public static String email = "pehicej808@bsomek.com";
+    public static String password = "tAORf9zTeyKSP4R";
+
+    public static String name = "Human Resource";
+    public static String Shortname = "HR";
+    public static String Describe = "The HR (Human Resources) department is responsible for managing the employee life cycle";
+    public static String Editname1 = "Quality Assurance";
+    public static String EditShortname = "QA";
+    public static String EditDescribe = "Quality assurance is a broad process for preventing quality failures. The QA team is involved in all stages of a product's development: production, testing, packaging, and delivery.";
 
     @BeforeClass
     public void beforeMethod() {
         driver = new EdgeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Initialize WebDriverWait with a timeout of 10 seconds
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Initialize WebDriverWait with a timeout of 10 seconds
     }
 
     @Test
-    public void TC0001() {
+    public void TC0006() {
         By LoginPage = By.xpath("//a[@href='https://qa-gm3.quaspareparts.com/a3m/']");
         By usernameInput = By.xpath("//input[@id='username']");
         By passwordInput = By.xpath("//input[@id='password']");
@@ -72,11 +80,37 @@ public class TC_0001 { //commment
         WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']")));
         assertTrue(successMessage.isDisplayed(), "Success message is not displayed after adding the unit.");
 
+        //-------------------------------------------------------------------------------------------------------------------
+
+        WebElement ClickOnEdit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-outline-dark']")));
+        ClickOnEdit.click();
+        //<write a name>
+        WebElement EditName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
+        EditName.clear();
+        EditName.sendKeys(Editname1);
+        //<write short name>
+        WebElement EditShortName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[2]")));
+        EditShortName.clear();
+        EditShortName.sendKeys(EditShortname);
+        //<write a description>
+        WebElement EditDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[3]")));
+        EditDescription.clear();
+        EditDescription.sendKeys(EditDescribe);
+        //<select dep type>
+        WebElement EditselectDeptTypeDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class=' css-1xc3v61-indicatorContainer'])[1]")));
+        EditselectDeptTypeDropdown.click();
+        //<save the values>
+        WebElement saveTheEditValues = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-info text-white px-3']")));
+        saveTheEditValues.click();
+
+        //<unsuccessful message appear >
+        WebElement EmptyName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='text-danger']")));
+        assertTrue(EmptyName.isDisplayed(), "Unsuccessful message is not displayed");
+
     }
 
     @AfterMethod
     public void quitTabs() {
         driver.quit();
-
     }
 }
