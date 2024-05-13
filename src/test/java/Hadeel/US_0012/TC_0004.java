@@ -25,7 +25,7 @@ public class TC_0004 {
     public static String Editname = "Information Technology";
     public static String EditShortname = "IT";
     public static String EditDescribe = "Information technology is a set of related fields that encompass computer systems, software, programming languages and data and information processing and storage.";
-    public static String UnitPath = "//a[@href='#/department/1715254322840616/1592']";
+    public static String UnitPath = "//a[@href='#/department/1715254322840616/1669']";
     WebDriver driver;
     WebDriverWait wait;
 
@@ -39,7 +39,7 @@ public class TC_0004 {
     }
 
     @Test
-    public void TC0001() {
+    public void TC0004() {
         By LoginPage = By.xpath("//a[@href='https://qa-gm3.quaspareparts.com/a3m/']");
         By usernameInput = By.xpath("//input[@id='username']");
         By passwordInput = By.xpath("//input[@id='password']");

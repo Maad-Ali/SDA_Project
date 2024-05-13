@@ -38,7 +38,7 @@ public class TC_0004 {
     }
 
     @Test
-    public void TC0001() {
+    public void TC0004() {
         By LoginPage = By.xpath("//a[@href='https://qa-gm3.quaspareparts.com/a3m/']");
         By usernameInput = By.xpath("//input[@id='username']");
         By passwordInput = By.xpath("//input[@id='password']");

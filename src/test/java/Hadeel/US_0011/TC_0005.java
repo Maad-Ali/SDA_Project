@@ -35,8 +35,7 @@ public class TC_0005 {
     }
 
     @Test
-    public void TC0005() throws InterruptedException {
-        Thread.sleep(1000);
+    public void TC0005() {
         By LoginPage = By.xpath("//a[@href='https://qa-gm3.quaspareparts.com/a3m/']");
         By usernameInput = By.xpath("//input[@id='username']");
         By passwordInput = By.xpath("//input[@id='password']");
@@ -112,4 +111,4 @@ public class TC_0005 {
     public void quitTabs() {
         driver.quit();
     }
-}
+} //comment

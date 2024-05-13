@@ -12,7 +12,7 @@ import java.time.Duration;
 
 import static org.testng.Assert.assertTrue;
 
-public class TC_0001 {
+public class TC_0001 { //commment
     public static String email = "pehicej808@bsomek.com";
     public static String password = "tAORf9zTeyKSP4R";
     public static String name = "Human Resource";
