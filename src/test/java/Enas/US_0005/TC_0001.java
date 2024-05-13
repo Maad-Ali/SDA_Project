@@ -25,7 +25,7 @@ public class TC_0001 {
         }
 
         @org.testng.annotations.Test
-        public void testGoPage() throws InterruptedException {
+        public void MembershipAccess() throws InterruptedException {
 
             driver.get("https://qa-gm3.quaspareparts.com/");
             // Submit the login form

@@ -28,7 +28,7 @@ public class TC_0002 {
     }
 
     @org.testng.annotations.Test
-    public void testGoPage() {
+    public void UpdateCompany () {
 
         driver.get("https://qa-gm3.quaspareparts.com/");
         // Submit the login form
