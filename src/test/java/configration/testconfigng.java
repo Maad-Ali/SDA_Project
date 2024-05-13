@@ -1,7 +1,7 @@
 package configration;
 
 import org.example.ActionsBot;
-import engine.PropertiesReader;
+import org.example.PropertiesReader;
 import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,8 +9,12 @@ import org.apache.logging.log4j.core.config.Configurator;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -26,49 +30,45 @@ import java.time.Duration;
 public abstract class testconfigng {
     protected WebDriver driver;
     protected Wait<WebDriver> wait;
-    protected static Logger logger;
+   // protected static Logger logger;
     protected ActionsBot bot;
-    protected static JSONObject testData;
-    protected JSONObject testCaseData;
+//    protected static JSONObject testData;
 
-    @Step("Initializing test data and properties")
     @BeforeClass
-    public static void globalSetup() throws IOException, ParseException {
-        Configurator.initialize(null, "src/main/resources/properties/log4j2.properties");
-        logger = LogManager.getLogger(testconfigng.class.getName());
-        testData =  (JSONObject) new JSONParser().parse( new FileReader("src/test/resources/testData/sample.json", StandardCharsets.UTF_8) );
-         //  PropertiesReader.readpropirtes("src/main/resources/properties/configuration.properties");
-            // PropertiesReader.readpropirtes("src/main/resources/properties/ConfigrationForMagento.properties");
-        PropertiesReader.readpropirtes("src/main/resources/ConfigrationForMagento.properties");
-
+    public static void beforeClass() throws IOException, ParseException {
+      //  Configurator.initialize(null, "src/main/resources/properties/log4j2.properties");
+      //  logger = LogManager.getLogger(testconfigng.class.getName());
+        //testData =  (JSONObject) new JSONParser().parse( new FileReader("src/test/resources/testData/sample.json", StandardCharsets.UTF_8) );
     }
 
-    @Step("Initializing target browser")
     @Parameters({ "target-browser" })
-    @BeforeMethod
-    public void browserInitialization(@Optional("chrome") String targetBrowser){
-        targetBrowser = PropertiesReader.props.getProperty("targetBrowser");
-        logger.info("Launching "+targetBrowser+" browser");
+    @BeforeClass
+    public void beforeMethod(@Optional("chrome") String targetBrowser){
+        //logger.info("Opening "+targetBrowser+" Browser");
 
         switch (targetBrowser){
             case "chrome" -> driver = new ChromeDriver();
             case "firefox" -> driver = new FirefoxDriver();
-            case "safari" -> driver = new SafariDriver();
             case "edge" -> driver = new EdgeDriver();
         }
 
+//        driver = new EventFiringDecorator(new CustomListener()).decorate(driver);
 
         driver.manage().window().maximize();
 
-        logger.info("Configuring 5 second explicit wait");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        bot = new ActionsBot(driver, wait, logger);
+       // logger.info("Configuring 5 second explicit wait");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       // bot = new ActionsBot(driver, wait, logger);
     }
 
-    @Step("Terminating target browser")
     @AfterMethod
-    public void browserTermination(){
-        logger.info("Quitting Browser");
-        driver.quit();
+    public void afterMethod(){
+       // logger.info("Quitting Browser");
+     //   driver.quit();
     }
+
 }
+
+
+
+
