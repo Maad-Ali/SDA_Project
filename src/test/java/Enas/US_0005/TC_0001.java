@@ -25,7 +25,7 @@ public class TC_0001 {
         }
 
         @org.testng.annotations.Test
-        public void testGoPage() {
+        public void testGoPage() throws InterruptedException {
 
             driver.get("https://qa-gm3.quaspareparts.com/");
             // Submit the login form
@@ -49,8 +49,15 @@ public class TC_0001 {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             //Click the existed membership to access the membership details.
             WebElement ExistedMembership = driver.findElement(By.className("col-4"));
+            Thread.sleep(4000);
             Assert.assertTrue(ExistedMembership.isDisplayed());
             ExistedMembership.click();
+            // Assert that the Subscriber  is displayed
+            WebElement Subscriber = driver.findElement(By.className("col-md-4"));
+            String ExpectedSubscriber = "Subscriber\n" +
+                    "pehicej808@bsomek.com";
+            String actualSubscriber = Subscriber.getText();
+            Assert.assertEquals(actualSubscriber, ExpectedSubscriber, "Subscriber is not displayed correctly.");
 
         }
 
