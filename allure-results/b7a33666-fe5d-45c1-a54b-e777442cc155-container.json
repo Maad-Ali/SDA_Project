@@ -1,0 +1,1 @@
+{"uuid":"b7a33666-fe5d-45c1-a54b-e777442cc155","name":"Enas.US_0005.TC_0002","children":["c8e81648-d91d-4f77-885c-f1aff14c0b59"],"befores":[{"name":"beforeClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1715640727114,"stop":1715640729995}],"afters":[],"start":1715640727047,"stop":1715640767595}
