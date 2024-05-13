@@ -1,16 +1,13 @@
 package engine;
 
-
-
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.apache.logging.log4j.Logger;
-
-
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -65,6 +62,13 @@ public class ActionsBot {
     }
 
     @Step
+    public void click2(By locator){
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+        driver.findElement(locator).click();
+
+    }
+
+    @Step
     public String getText(By locator){
         logger.info("Reading text from: "+locator);
         AtomicReference<String> actualText = new AtomicReference<>("");
@@ -75,5 +79,6 @@ public class ActionsBot {
         });
         return actualText.get();
     }
+
 
 }
