@@ -1,10 +1,12 @@
-package bushra.Us_0003;
+package bushra.US_0004;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
+
 public class EditProfile extends testconfigng {
     //
     /*

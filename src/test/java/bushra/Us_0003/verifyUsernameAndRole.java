@@ -1,6 +1,6 @@
-package bushra.US_0004;
+package bushra.Us_0003;
 
-import bushra.Us_0003.testconfigng;
+import bushra.US_0004.testconfigng;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
