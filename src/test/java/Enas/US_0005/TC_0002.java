@@ -50,11 +50,13 @@ public class TC_0002 {
         WebElement logoElement = driver.findElement(By.xpath("//img[@class='img-fluid rounded']"));
 
         boolean isLogoDisplayed = logoElement.isDisplayed();
-        if (isLogoDisplayed) {
-            System.out.println("Logo is appearing.");
-        } else {
-            System.out.println("Logo is not appearing.");
-        }
+        Assert.assertFalse(isLogoDisplayed, "Logo is visually appearing when it should not be.");
+
+//        if (isLogoDisplayed) {
+//            System.out.println("Logo is appearing.");
+//        } else {
+//            System.out.println("Logo is not appearing.");
+//        }
     }
 
     @AfterClass
