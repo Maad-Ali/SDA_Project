@@ -50,29 +50,36 @@ public class TC_0001 {
         // Locate the input field by its ID and click on it
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebElement nameField = driver.findElement(By.name("name"));
-        nameField.click();
+//        nameField.click();
         // Select the existing text in the input field
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         nameField.sendKeys(Keys.CONTROL + "a");
         // Delete the selected text
         nameField.sendKeys(Keys.DELETE);
+//        nameField.clear();
         // Locate the input field by its ID and click on it
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebElement emailField = driver.findElement(By.name("email"));
-        emailField.click();
-        // Select the existing text in the input field
+//        emailField.click();
+//        // Select the existing text in the input field
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         emailField.sendKeys(Keys.CONTROL + "a");
         // Delete the selected text
         emailField.sendKeys(Keys.DELETE);
+//        emailField.clear();
+
+
         //Submit the changes to update the company details.
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         WebElement SaveButton = driver.findElement(By.xpath("//button[normalize-space()='Save']"));
         SaveButton.click();
 
         // Assert that the error message is displayed
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebElement errorMessage = driver.findElement(By.xpath("//span[@class='text-danger']"));
         String expectedErrorMessage = "Please enter a name for company";
         String actualErrorMessage = errorMessage.getText();
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message is not displayed correctly.");
-
 
         // Assert that the save button is disabled
         boolean isSaveButtonEnabled = SaveButton.isEnabled();
@@ -86,7 +93,7 @@ public class TC_0001 {
 
     @AfterClass
     public void afterMethod() {
-       driver.quit();
+       //driver.quit();
     }
 
 }
