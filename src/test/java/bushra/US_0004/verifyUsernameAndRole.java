@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class verifyUsernameAndRole  extends testconfigng {
-     // US_0003 displayed username and role top of dropdown menu
+     // US_0003 displayed username and role top of dropdown menu.
      By LogginButton=By.className("login-button");
     By username_role=By.xpath("//span[@class='fw-bold']");
     private void Login(String username, String password){
