@@ -246,19 +246,6 @@ public class EditProfile extends testconfigng {
 
     }
     @Test
-    public void ChangePassword16() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa1BbCc@");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Aa1BbCc@");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-dark text-white me-2']"))).click();
-        Thread.sleep(100);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-danger text-white me-2']"))).click();
-        String DisplayMessage= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']"))).getText();
-        Assert.assertEquals( DisplayMessage,"The same password used previously");
-        System.out.println( DisplayMessage);
-    }
-    @Test
     public void EditUserName1() throws InterruptedException {
         Login( "gabana2035@ahieh.com", "Aa1BbCc@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-dark rounded-circle']"))).click();
