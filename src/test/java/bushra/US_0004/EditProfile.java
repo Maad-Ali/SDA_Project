@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class EditProfile extends testconfigng {
     //
     /*
-   US_0004  Edit profile information in profile module.
+   US_0004  Edit profile information in profile module
    Password may contain only uppercase (A-Z) letters, lowercase (a-z) letters, numbers (0-9) and special characters of .@#$%_&
    Password must be between 8 to 20 characters long
    Password must contain at least one uppercase

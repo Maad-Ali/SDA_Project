@@ -14,7 +14,7 @@ import org.testng.annotations.Parameters;
 import java.time.Duration;
 
 public abstract class testconfigng {
-    //
+
         protected WebDriver driver;
         protected Wait<WebDriver> wait;
 
