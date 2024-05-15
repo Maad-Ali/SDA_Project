@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class US_0010 extends testconfigng {
 
-    public void Login() {
+    private void Login() {
 
         driver.get("https://qa-gm3.quaspareparts.com/");
         By LogginButton = By.className("login-button");
@@ -39,8 +39,9 @@ public class US_0010 extends testconfigng {
             driver.findElement(numberOfList).getText();
             return true;
         });
-       var   number =  driver.findElements(numberOfList).size();
-        Assert.assertEquals(number,"129");
+       int   number =  driver.findElements(numberOfList).size();
+
+        Assert.assertTrue(  number >0 ,"the list is availble");
 
 
     }

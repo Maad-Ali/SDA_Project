@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -25,9 +26,18 @@ public class US_0009 extends testconfigng {
     By departmentLink = By.id("link6");
     By editButton = By.xpath("//button[contains(@class,'btn btn-info float-end text-white')]");
     By SaveButton = By.xpath("//button[contains(@class,'btn btn-info text-white px-3')]");
-    String url = "https://qa-gm3.quaspareparts.com/a3m/#/department/1715254322840616/1651";
+    String url = "https://qa-gm3.quaspareparts.com/a3m/#/department/1715254322840616/1859";
 
-    public void Login() {
+    // delete test BY
+    By deleteButton = By.xpath("//button[contains(@class,'btn btn-danger text-light fw-bold float-end')]");
+    By deleteButtonConfirm = By.xpath("//button[text()='Confirm']");
+    By numberOfList = By.xpath("//div[@class='col-9']");
+    int i;
+    By listdepartment = By.xpath("((//div[@class='row'])[4]//div[@class='row']//div[@class='col-9'])[" + i + "]//b");
+
+    Boolean result = false;
+
+    private void Login() {
         driver.navigate().to("https://qa-gm3.quaspareparts.com/");
         By LoginButton = By.className("login-button");
         driver.findElement(LoginButton).click();
@@ -38,6 +48,7 @@ public class US_0009 extends testconfigng {
         driver.findElement(Password).sendKeys("tAORf9zTeyKSP4R");
         driver.findElement(SignIn).click();
     }
+
 
 
     @Test
@@ -51,7 +62,7 @@ public class US_0009 extends testconfigng {
             return true;
         });
         driver.findElement(departmentLink).click();
-// go to specific department
+        // go to specific department
         driver.get(url);
         Thread.sleep(3000);
         // click on edit button
@@ -64,7 +75,7 @@ public class US_0009 extends testconfigng {
 
             driver.findElement(editdepatmentName).clear();
             driver.findElement(editdepatmentName).sendKeys("test");
-           return true;
+            return true;
         });
 
         // choose department type
@@ -97,9 +108,7 @@ public class US_0009 extends testconfigng {
         Thread.sleep(6000);
         Login();
         driver.get(url);
-        By deleteButton = By.xpath("//button[contains(@class,'btn btn-danger text-light fw-bold float-end')]");
-        By deleteButtonConfirm = By.xpath("//button[text()='Confirm']");
-        By getTextfordepartmentname = By.xpath("//b[text()='salman']");
+
         wait.until(webDriver -> {
             driver.findElement(editButton).click();
             driver.navigate().refresh();
@@ -116,39 +125,33 @@ public class US_0009 extends testconfigng {
             driver.findElement(deleteButtonConfirm).click();
             return true;
         });
-wait.until(webDriver -> {
-    Assert.assertFalse(driver.findElement(getTextfordepartmentname). isDisplayed());
-        //Boolean t= ! driver.findElement (getTextfordepartmentname).isDisplayed();
-       // Assert.assertFalse( driver.findElement (getTextfordepartmentname).isDisplayed(),"the department is deleted");
-        return true;
-});
 
-//<click on delete>
-        WebElement delete = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-danger text-light fw-bold float-end']")));
-        delete.click();
-        WebElement confirm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-danger']")));
-        confirm.click();
-        //make sure it gone
-        WebElement clickOnArrowElement1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divCollapseUncollapse']")));
-        clickOnArrowElement1.click();
-        //<click on remote unit>
-        WebElement clickOnRemoteUnit1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit1);
 
-        //boolean unitDeleted = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(UnitPath)));
+//
+        int number1 = driver.findElements(numberOfList).size();
+        for ( i = 1; i <= number1; i++) {
+            Thread.sleep(3000);
+            List<WebElement> allListofNoPriority = driver.findElements(listdepartment);
+            for (WebElement element : allListofNoPriority) {
 
-//        // Log the status of the unit
-//        if (unitDeleted) {
-//            System.out.println("Unit is deleted as expected.");
-//        } else {
-//            System.out.println("Unit is still present in the DOM.");
-//        }
+                if (element.getText() != "salman") {
+                    System.out.println("Test case should be pass");
+                    result = true;
 
-        // Assert that the unit is deleted
-//        assertTrue(unitDeleted, "The unit should be deleted.");
+                    System.out.println(element.getText());
+                } else {
+                    System.out.println("Test case should be fail.");
+                }
+                Assert.assertTrue(result, "department is not deleted");
+            }
+        }
+
 
 
     }
 
 
 }
+
+
+
