@@ -79,6 +79,7 @@ public class US_0009 extends testconfigng {
         });
 
 
+
         // choose department type
         WebElement selectDeptTypeDropdown = wait.until
                 (ExpectedConditions.elementToBeClickable
