@@ -1,12 +1,12 @@
 package JAWAHER.User_Story_13;
+import JAWAHER.Base_;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import java.time.Duration;
-public class Test_Case2 {
+public class Test_Case2  extends Base_ {
 WebDriver driver;
 WebDriverWait wait;
 @BeforeClass
@@ -55,49 +55,4 @@ WebDriverWait wait;
 
     }
 
-
-
-
-    private void ClickTeamsModule(){
-
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='link7']"))).click();;
-    }
-    protected void Click_AddNewButton (){
-
-        String xpath="//button[contains(@class, 'btn btn-info float-end text-white') and @type='button']";
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).click();
-
-    }
-
-    private void AddNewTeamMethod() {
-        String Name="Quality Assurance 5";
-        String ShortcutName="QA 5";
-
-        //Name
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        var Field1 =wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
-        wait.pollingEvery(Duration.ofMillis(2000));
-        Field1.sendKeys(Name);
-
-        //shortName
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        var Field2 =wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("short_name")));
-        Field2.sendKeys(ShortcutName);
-
-        //Team Type
-        String depType_dropdown_path = "//div[@id='react-select-3-placeholder']";//Locate element by ID
-        // Find the dropdown element
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        WebElement depType_dropdown =wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(depType_dropdown_path)));
-        wait.pollingEvery(Duration.ofMillis(1000));
-        depType_dropdown.
-                sendKeys("Team", Keys.ENTER);
-
-        //Click Save Button
-        var SaveButton = driver.findElement(By.xpath("//button[@class=\"btn btn-info text-white px-3\"]"));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        SaveButton.click();
-    }
 }

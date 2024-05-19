@@ -4,13 +4,12 @@ package JAWAHER.User_Story_13;
 //1-Teams Are Displayed and Clickable
 //2-Add New Team
 
+import JAWAHER.Base_;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -20,7 +19,7 @@ import java.time.Duration;
 import java.util.List;
 
 @Test
-public class Test_Case1 {
+public class Test_Case1 extends Base_ {
 WebDriver driver;
 Wait<WebDriver> wait;
 
@@ -101,62 +100,10 @@ Wait<WebDriver> wait;
         int listSize_theNew2= wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath(Path)))).size();
 
 
-
-
-
         Assert.assertEquals((listSize_theNew1+1),listSize_theNew2);
 
     }
 
 
-
-
-
-    protected void ClickTeamsModule(){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='link7']")));
-        // click on the compose button as soon as the "compose" button is visible
-        driver.findElement(By.xpath("//li[@id='link7']")).click();
-    }
-
-    protected void Click_AddNewButton (){
-
-        String xpath="//button[contains(@class, 'btn btn-info float-end text-white') and @type='button']";
-
-        FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(60)).pollingEvery(Duration.ofMillis(1000));
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).click();
-
-    }
-    private void AddNewTeamMethod(){
-
-        //Values for Test
-        String Name="Quality Assurance 5";
-        String ShortcutName="QA 5";
-
-        //Name
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        var Field1 =wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
-        Field1.sendKeys(Name);
-
-        //shortName
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        var Field2 =wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("short_name")));
-        Field2.sendKeys(ShortcutName);
-
-        //Team Type
-
-        String depType_dropdown_path="'react-select-2-input'";
-        //Find the dropdown element
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        WebElement depType_dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.id(depType_dropdown_path)));
-        depType_dropdown.sendKeys("Team", Keys.ENTER);
-
-        //Click Save Button
-
-        var SaveButton=  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class=\"btn btn-info text-white px-3\"]")));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        SaveButton.click();
-    }
 
 }

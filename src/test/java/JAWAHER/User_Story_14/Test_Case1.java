@@ -6,6 +6,7 @@ Department name(Required)
 Department Type(Required)
 delete
  */
+import JAWAHER.Base_;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import java.time.Duration;
 
-public class Test_Case1 {
+public class Test_Case1 extends Base_ {
 WebDriver driver;
 WebDriverWait wait;
 
@@ -237,49 +238,6 @@ public void EditeTeams_ErrorsTest01(){
 
     }
 
-
-
-
-
-
-
-
-
-
-//Methods
-
-    protected void ClickTeamsModule(){
-
-        String TeamsModule_xpath="//li[@id='link7']";
-        WebElement TeamsModuleElement;
-
-        wait = new WebDriverWait(driver,Duration.ofSeconds(60));
-        wait.pollingEvery(Duration.ofMillis(1000));
-        TeamsModuleElement= wait.until(ExpectedConditions.elementToBeClickable(By.xpath(TeamsModule_xpath)));
-        TeamsModuleElement.click();
-    }
-
-
-    private void EditeATeamClickButton() {
-        //Note:-
-        //You Have to be in Teams Module
-        //Ex:- ClickTeamsModule();
-
-        //1) Click on A team
-        WebElement A_Team;
-        String El_xpath = "(//a/b)[3]";
-        wait = new WebDriverWait(driver, Duration.ofMinutes(3));
-        A_Team = wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(El_xpath))));
-        A_Team.click();
-
-        //2) Edit it
-        //Click on Edit Button
-        String Edit_xpath = "(//button[@type='button'])[3]";
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Edit_xpath))).click();
-
-        driver.navigate().refresh();
-    }
 
 
 }
