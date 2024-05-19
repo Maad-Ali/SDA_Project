@@ -1,4 +1,4 @@
-package JAWAHER.User_Story_14;
+package J_User_Story_14;
 //US_0014 Edit the teams displayed in the Teams module
 /*
 Description :
@@ -6,7 +6,7 @@ Department name(Required)
 Department Type(Required)
 delete
  */
-import JAWAHER.Base_;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import java.time.Duration;
 
-public class Test_Case1 extends Base_ {
+public class Test_Case1{
 WebDriver driver;
 WebDriverWait wait;
 
@@ -87,7 +87,7 @@ WebDriverWait wait;
 
 
 
-        //case: Edit the Description    xpath://label[@name="description" and @placeholder='Department Description']
+
         //** Assert Description Field
         String xpath_DescriptionLabel="//label[@name='description'and@placeholder='Department Description']";
         wait = new WebDriverWait(driver, Duration.ofSeconds(50));
@@ -238,6 +238,36 @@ public void EditeTeams_ErrorsTest01(){
 
     }
 
+
+//Methods
+
+
+    protected void ClickTeamsModule(){
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='link7']"))).click();;
+    }
+
+    protected void EditeATeamClickButton() {
+        //Note:-
+        //You Have to be in Teams Module
+        //Ex:- ClickTeamsModule();
+
+        //1) Click on A team
+        WebElement A_Team;
+        String El_xpath = "(//a/b)[3]";
+        wait = new WebDriverWait(driver, Duration.ofMinutes(3));
+        A_Team = wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(El_xpath))));
+        A_Team.click();
+
+        //2) Edit it
+        //Click on Edit Button
+        String Edit_xpath = "(//button[@type='button'])[3]";
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Edit_xpath))).click();
+
+        driver.navigate().refresh();
+    }
 
 
 }

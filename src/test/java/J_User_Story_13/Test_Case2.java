@@ -1,20 +1,63 @@
-package JAWAHER;
+package J_User_Story_13;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.Assert;
+import org.testng.annotations.*;
 import java.time.Duration;
+public class Test_Case2  {
+WebDriver driver;
+WebDriverWait wait;
+@BeforeClass
+    public void beforeMethod(){
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.navigate().to("https://qa-gm3.quaspareparts.com/");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        Login();
+    }
+    @Ignore
+    @AfterClass
+    public void afterMethod(){
+        //driver.quit();
+    }
 
-public class Base_ {
-    WebDriver driver;
-    Wait<WebDriver> wait;
+    protected void Login(){
+        By LoginButton=By.xpath("//a[@class='login-button']");
+        driver.findElement(LoginButton).click();
+
+        By UserName =By.id("username");
+        By Password =By.id("password");
+        driver.findElement(UserName).sendKeys("assurewise@assurewise.com");
+        driver.findElement(Password).sendKeys("LERF6RlSyAbgRHc");
+        driver.findElement(By.tagName("button")).click();
+    }
 
 
+
+
+
+@Test(priority =1)
+   public void AddNewTeamTest(){
+    ClickTeamsModule();
+    Click_AddNewButton();
+    AddNewTeamMethod();
+
+    //Asserting Teams Successfully Added with Alerts
+    Alert alert=driver.switchTo().alert();
+
+    String AlertText= alert.getText(); //| Assertion Message:"New department successfully created"
+    String Message="New department successfully created";
+
+    Assert.assertTrue(AlertText.contains(Message));
+
+
+    }
+
+
+//Methods
 
 
     protected void ClickTeamsModule(){
@@ -60,31 +103,5 @@ public class Base_ {
         SaveButton.click();
     }
 
-
-
-
-//Methods
-
-
-    protected void EditeATeamClickButton() {
-        //Note:-
-        //You Have to be in Teams Module
-        //Ex:- ClickTeamsModule();
-
-        //1) Click on A team
-        WebElement A_Team;
-        String El_xpath = "(//a/b)[3]";
-        wait = new WebDriverWait(driver, Duration.ofMinutes(3));
-        A_Team = wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(El_xpath))));
-        A_Team.click();
-
-        //2) Edit it
-        //Click on Edit Button
-        String Edit_xpath = "(//button[@type='button'])[3]";
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Edit_xpath))).click();
-
-        driver.navigate().refresh();
-    }
 
 }
