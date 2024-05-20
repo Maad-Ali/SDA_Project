@@ -1,5 +1,5 @@
 //package Mohammed;
-package mohammed;
+package Mohammed;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
