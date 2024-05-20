@@ -44,8 +44,8 @@ public class US_0009 extends testconfigng {
         By Username = By.id("username");
         By Password = By.id("password");
         By SignIn = By.tagName("button");
-        driver.findElement(Username).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(Password).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(Username).sendKeys("assurewise@assurewise.com");
+        driver.findElement(Password).sendKeys("K_k-KaarTGk_48c");
         driver.findElement(SignIn).click();
     }
 
