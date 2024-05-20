@@ -16,7 +16,7 @@ public class US_0008 extends Tests {
 
         Login loginPage = new Login(driver, bot);
         loginPage.toGo();
-        loginPage.login("pehicej808@bsomek.com", "tAORf9zTeyKSP4R");
+        loginPage.login("assurewise@assurewise.com", "K_k-KaarTGk_48c");
 
         Department departmentPage = new Department(driver, bot);
         departmentPage.clickDepartmentLink();
