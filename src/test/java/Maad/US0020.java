@@ -35,8 +35,8 @@ public class US0020 {
         By Username = By.id("username");
         By Password = By.id("password");
         By SignIn = By.tagName("button");
-        driver.findElement(Username).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(Password).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(Username).sendKeys("assurewise@assurewise.com");
+        driver.findElement(Password).sendKeys("K_k-KaarTGk_48c");
         driver.findElement(SignIn).click();
 
         // you need to change id here
@@ -50,12 +50,12 @@ public class US0020 {
         driver.findElement(PermissionsModuleLink).click();
 
 
-        Thread.sleep(3000);
+        Thread.sleep(20000);
 
         wait.until(f -> {
             By PermissionsComponent = By.xpath("//div[contains(@class, 'col-lg-4') and contains(@class, 'col-md-6') and contains(@class, 'col-12') and contains(@class, 'd-grid') and contains(@class, 'mb-2')]");
             int actualNumberOfPermissions = driver.findElements(PermissionsComponent).size();
-            Assert.assertEquals(94, actualNumberOfPermissions);
+            Assert.assertEquals(actualNumberOfPermissions,94);
             return true;
         });
     }

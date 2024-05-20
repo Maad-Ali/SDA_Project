@@ -23,10 +23,10 @@ public class verifyUsernameAndRole  extends testconfigng {
 
     }@Test
     public void verifyUsernameAndRoleDisplayedInDropdown()  {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
+        Login( "assurewise@assurewise.com", "K_k-KaarTGk_48c");
         driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
         String verifyUsernameAndRoleDisplayed= driver.findElement(username_role).getText();
-        Assert.assertEquals(verifyUsernameAndRoleDisplayed,"gabana2035@ahieh.com | Business Owner");
+        Assert.assertEquals(verifyUsernameAndRoleDisplayed,"assurewise@assurewise.com | Business Owner");
         System.out.println("verifyUsernameAndRoleDisplayed");
     }
 }
