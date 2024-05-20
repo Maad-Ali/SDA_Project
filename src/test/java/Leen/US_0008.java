@@ -1,13 +1,10 @@
 package Leen;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Department;
 import pages.Login;
 import pages.NewDepartmentPage;
-
 import java.util.List;
 
 public class US_0008 extends Tests {
@@ -34,7 +31,7 @@ public class US_0008 extends Tests {
         List<String> departmentList = departmentPage.getDepartmentList();
         String departmentsTable = String.join(", ", departmentList);
         System.out.println(departmentsTable);
-        Assert.assertTrue(departmentsTable.contains("hello"));
+        Assert.assertTrue(departmentsTable.contains("test"));
 
     }
 
@@ -42,7 +39,7 @@ public class US_0008 extends Tests {
     public void failedAddNewDepartment() {
         Login loginPage = new Login(driver, bot);
         loginPage.toGo();
-        loginPage.login("pehicej808@bsomek.com", "tAORf9zTeyKSP4R");
+        loginPage.login("assurewise@assurewise.com", "K_k-KaarTGk_48c");
 
         Department departmentPage = new Department(driver, bot);
         departmentPage.clickDepartmentLink();
