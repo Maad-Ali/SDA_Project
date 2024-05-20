@@ -22,8 +22,8 @@ public class US_0001 {
         By username = By.id("username");
         By password = By.id("password");
         By LoginButton = By.tagName("button");
-        driver.findElement(username).sendKeys("assurewise@assurewise.com");
-        driver.findElement(password).sendKeys("ih_fQsWFd34Shkh");
+        driver.findElement(username).sendKeys("assurefour@four.com");
+        driver.findElement(password).sendKeys("h4VQAbAO8HNXSuE");
         driver.findElement(LoginButton).click();
 
         var title = driver.getTitle();
