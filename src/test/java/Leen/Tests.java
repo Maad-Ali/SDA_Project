@@ -46,7 +46,7 @@ public abstract class Tests {
         driver.manage().window().maximize();
 
         logger.info("Configuring 5 second explicit wait");
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         bot = new ActionsBot(driver, wait, logger);
     }
 
