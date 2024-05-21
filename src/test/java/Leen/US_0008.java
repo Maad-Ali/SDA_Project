@@ -13,7 +13,7 @@ public class US_0008 extends Tests {
 
         Login loginPage = new Login(driver, bot);
         loginPage.toGo();
-        loginPage.login("assurewise@assurewise.com", "K_k-KaarTGk_48c");
+        loginPage.login("assurewise@assurewise.com", "EJWO_PWr17ePelV");
 
         Department departmentPage = new Department(driver, bot);
         departmentPage.clickDepartmentLink();
@@ -39,7 +39,7 @@ public class US_0008 extends Tests {
     public void failedAddNewDepartment() {
         Login loginPage = new Login(driver, bot);
         loginPage.toGo();
-        loginPage.login("assurewise@assurewise.com", "K_k-KaarTGk_48c");
+        loginPage.login("assurewise@assurewise.com", "EJWO_PWr17ePelV");
 
         Department departmentPage = new Department(driver, bot);
         departmentPage.clickDepartmentLink();
