@@ -31,8 +31,8 @@ public class TC_0001 {
             // Submit the login form
             driver.findElement(By.className("login-button")).click();
             // Find and fill in the username and password fields
-            driver.findElement(By.id("username")).sendKeys("pehicej808@bsomek.com");
-            driver.findElement(By.id("password")).sendKeys("tAORf9zTeyKSP4R");
+            driver.findElement(By.id("username")).sendKeys("assurewise@assurewise.com");
+            driver.findElement(By.id("password")).sendKeys("EJWO_PWr17ePelV");
             // Submit the sign-in form
             driver.findElement(By.tagName("button")).click();
             //Click on the user information section.
@@ -48,14 +48,14 @@ public class TC_0001 {
             MemberShips.click();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             //Click the existed membership to access the membership details.
-            WebElement ExistedMembership = driver.findElement(By.className("col-4"));
-            Thread.sleep(4000);
+            WebElement ExistedMembership = driver.findElement(By.xpath("//div[@class='card-body p -3']"));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             Assert.assertTrue(ExistedMembership.isDisplayed());
             ExistedMembership.click();
             // Assert that the Subscriber  is displayed
             WebElement Subscriber = driver.findElement(By.className("col-md-4"));
             String ExpectedSubscriber = "Subscriber\n" +
-                    "pehicej808@bsomek.com";
+                    "assurewise@assurewise.com";
             String actualSubscriber = Subscriber.getText();
             Assert.assertEquals(actualSubscriber, ExpectedSubscriber, "Subscriber is not displayed correctly.");
 
@@ -67,6 +67,7 @@ public class TC_0001 {
         }
 
     }
+
 
 
 
