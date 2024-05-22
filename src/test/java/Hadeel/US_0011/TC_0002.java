@@ -17,8 +17,8 @@ import java.time.Duration;
 import static org.testng.Assert.assertTrue;
 
 public class TC_0002 {
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurefour@four.com";
+    public static String password = "h4VQAbAO8HNXSuE";
     public static String name = "Human Resource";
     public static String Shortname = "HR";
     public static String Describe = "The HR (Human Resources) department is responsible for managing the employee life cycle";

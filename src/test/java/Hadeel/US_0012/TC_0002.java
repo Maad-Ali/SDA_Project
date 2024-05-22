@@ -17,8 +17,8 @@ import java.time.Duration;
 import static org.testng.Assert.assertTrue;
 
 public class TC_0002 {
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurefour@four.com";
+    public static String password = "h4VQAbAO8HNXSuE";
     public static String name = "Research and development";
     public static String Editname = "Information Technology";
     public static String EditTheShortname = "IT";
@@ -52,7 +52,7 @@ public class TC_0002 {
         WebElement clickOnRemoteUnit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit);
         //<click on any Unit here : >
-        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1593']")));
+        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1716152048216350/85']")));
         clickOnTheHR.click();
         //<click on Edit the Unit>
         WebElement clickOnEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-info float-end text-white']")));

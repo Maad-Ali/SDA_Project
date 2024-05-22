@@ -19,13 +19,13 @@ import java.time.Duration;
 import static org.testng.Assert.*;
 
 public class TC_0004 {
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurefour@four.com";
+    public static String password = "h4VQAbAO8HNXSuE";
     public static String name = "Research and development";
     public static String Editname = "Information Technology";
     public static String EditShortname = "IT";
     public static String EditDescribe = "Information technology is a set of related fields that encompass computer systems, software, programming languages and data and information processing and storage.";
-    public static String UnitPath = "//a[@href='#/department/1715254322840616/1669']";
+    public static String UnitPath = "//a[@href='#/department/1716152048216350/87']";
     WebDriver driver;
     WebDriverWait wait;
 

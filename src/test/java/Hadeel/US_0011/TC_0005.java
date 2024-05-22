@@ -16,8 +16,8 @@ public class TC_0005 {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurefour@four.com";
+    public static String password = "h4VQAbAO8HNXSuE";
 
     public static String name = "Human Resource";
     public static String Shortname = "HR";
@@ -79,14 +79,14 @@ public class TC_0005 {
         //-------------------------------------------------------------------------------------------------------------------
         WebElement ClickOnEdit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-outline-dark']")));
         ClickOnEdit.click();
-        //<write a name>
-        WebElement EditName1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
-        EditName1.clear();
-        EditName1.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         //<write short name>
         WebElement EditShortName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[2]")));
         EditShortName.clear();
         EditShortName.sendKeys(EditShortname);
+        //<write a name>
+        WebElement EditName1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[1]")));
+        EditName1.clear();
+        EditName1.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         //<write a description>
         WebElement EditDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@class='form-control fw-bold'])[3]")));
         EditDescription.clear();

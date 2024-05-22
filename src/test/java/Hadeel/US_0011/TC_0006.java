@@ -20,8 +20,8 @@ public class TC_0006 {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurefour@four.com";
+    public static String password = "h4VQAbAO8HNXSuE";
 
     public static String name = "Human Resource";
     public static String Shortname = "HR";
