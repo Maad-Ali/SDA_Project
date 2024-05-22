@@ -93,7 +93,7 @@ public class TC_0001 {
 
     @AfterClass
     public void afterMethod() {
-       //driver.quit();
+       driver.quit();
     }
 
 }

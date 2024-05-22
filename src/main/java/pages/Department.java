@@ -30,15 +30,6 @@ public class Department extends Pages {
         return true;
     }
 
-//    @Step
-//    public int getDepartmentSize(){
-//        bot.getText(departmentList);
-//        driver.findElements(departmentList);
-//
-//        List<WebElement> departments = driver.findElements(departmentList);
-//        return departments.size();
-//    }
-
     public List<String> getDepartmentList() {
 
         bot.getText(departmentList);

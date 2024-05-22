@@ -1,14 +1,11 @@
 package Leen;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Department;
 import pages.Login;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class US_0007 extends Tests{
     @Test
