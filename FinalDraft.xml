@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Tests" verbose="1" parallel="tests" thread-count="4">
+
+    <test name="Tests">
+        <parameter name="target-browser" value="chrome"/>
+        <classes>
+            <class name="Maad.US0019">
+            </class>
+            <class name="bushra.Us_0003.verifyUsernameAndRole"/>
+            <class name="Leen.Tests"/>
+            <class name="Leen.US_0007"/>
+            <class name="Leen.US_0008"/>
+            <class name="Mohammed.US_0001"/>
+            <class name="Asma.US_0017"/>
+            <class name="Asma.US_0018"/>
+            <class name="Hadeel.US_0011.TC_0001"/>
+            <class name="Hadeel.US_0011.TC_0002"/>
+            <class name="Hadeel.US_0011.TC_0003"/>
+            <class name="Hadeel.US_0011.TC_0004"/>
+            <class name="Hadeel.US_0011.TC_0006"/>
+            <class name="Lujain.US_15"/>
+            <class name="Salman.US_0009"/>
+            <class name="Salman.US_0010"/>
+
+        </classes>
+    </test>
+
+</suite>
