@@ -30,7 +30,7 @@ public class US0019 {
     }
 
     @Test
-    public void Login() throws InterruptedException {
+    public void US_19Test() throws InterruptedException {
 
         driver.navigate().to("https://qa-gm3.quaspareparts.com/");
         By LoginButton=By.className("login-button");
@@ -38,8 +38,8 @@ public class US0019 {
         By Username=By.id("username");
         By Password=By.id("password");
         By SignIn =By.tagName("button");
-        driver.findElement(Username).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(Password).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(Username).sendKeys("assurewise@assurewise.com");
+        driver.findElement(Password).sendKeys("EJWO_PWr17ePelV");
         driver.findElement(SignIn).click();
 
 

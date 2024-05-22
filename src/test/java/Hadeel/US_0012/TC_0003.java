@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,8 +16,8 @@ import java.time.Duration;
 import static org.testng.Assert.assertTrue;
 
 public class TC_0003 {
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurewise@assurewise.com";
+    public static String password = "EJWO_PWr17ePelV";
     public static String name = "Research and development";
     public static String EditThename = "Information Technology";
     public static String EditTheShortname = "IT";
@@ -26,7 +27,7 @@ public class TC_0003 {
 
     @BeforeClass
     public void beforeMethod() {
-        driver = new EdgeDriver();
+        driver = new ChromeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
@@ -50,7 +51,7 @@ public class TC_0003 {
         WebElement clickOnRemoteUnit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit);
         //<click on any Unit here : >
-        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1592']")));
+        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1716291130693086/101']")));
         clickOnTheHR.click();
         //<click on Edit the Unit>
         WebElement clickOnEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-info float-end text-white']")));

@@ -21,8 +21,8 @@ import static org.testng.Assert.assertTrue;
 
 
 public class TC_0001 {
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurewise@assurewise.com";
+    public static String password = "EJWO_PWr17ePelV";
     public static String name = "Research and development";
     public static String Editname = "Information Technology";
     public static String EditShortname = "IT";
@@ -33,7 +33,7 @@ public class TC_0001 {
 
     @BeforeClass
     public void beforeMethod() {
-        driver = new EdgeDriver();
+        driver = new ChromeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(60)); // Initialize WebDriverWait with a timeout of 10 seconds
@@ -57,8 +57,9 @@ public class TC_0001 {
         WebElement clickOnRemoteUnit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/departments/remote']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnRemoteUnit);
         //<click on any Unit here : >
-        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1715254322840616/1622']")));
-        clickOnTheHR.click();
+        WebElement clickOnTheHR = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='#/department/1716291130693086/76']")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", clickOnTheHR);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnTheHR);
         //<click on Edit the Unit>
         WebElement clickOnEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-info float-end text-white']")));
         clickOnEdit.click();

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,8 +20,8 @@ public class TC_0004 {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurewise@assurewise.com";
+    public static String password = "EJWO_PWr17ePelV";
 
     public static String name = "Human Resource";
     public static String Shortname = "HR";
@@ -31,7 +32,7 @@ public class TC_0004 {
 
     @BeforeClass
     public void beforeMethod() {
-        driver = new EdgeDriver();
+        driver = new ChromeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Initialize WebDriverWait with a timeout of 10 seconds

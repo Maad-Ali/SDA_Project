@@ -17,8 +17,8 @@ public class US_0010 extends testconfigng {
         By username = By.id("username");
         By password = By.id("password");
         By LoginButton = By.tagName("button");
-        driver.findElement(username).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(password).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(username).sendKeys("assurewise@assurewise.com");
+        driver.findElement(password).sendKeys("EJWO_PWr17ePelV");
         driver.findElement(LoginButton).click();
     }
 
@@ -27,6 +27,7 @@ public class US_0010 extends testconfigng {
     public void displayed() {
         Login();
      //   By departmentLink= By.id("link6");
+
         By remotbutton = By.xpath("//a[contains(@href,'#/departments/remote')]");
         wait.until(f -> {
             driver.findElement(remotbutton).getText();

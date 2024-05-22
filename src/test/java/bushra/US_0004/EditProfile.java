@@ -1,10 +1,12 @@
 package bushra.US_0004;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.security.Key;
 import java.util.concurrent.TimeUnit;
 
 public class EditProfile extends testconfigng {
@@ -38,7 +40,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword01() throws InterruptedException {
-        Login("gabana2035@ahieh.com", "Aa1BbCc@");
+        Login("assurefour@four.com", "Aa1BbCc@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa123456-");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Aa123456-");
@@ -51,7 +53,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword02() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
+        Login( "assurefour@four.com", "Aa1BbCc@");
 //        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa123456@");
@@ -65,7 +67,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword03() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa123456@");
+        Login( "assurefour@four.com", "Aa123456@");
 //        wait.until(f -> {
 //        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
@@ -80,7 +82,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword04() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa123456@");
+        Login( "assurefour@four.com", "Aa123456@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa12345#");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Aa12345#");
@@ -93,7 +95,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword05() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345#");
+        Login( "assurefour@four.com", "Aa12345#");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Aa12345678910111213@");
@@ -107,7 +109,7 @@ public class EditProfile extends testconfigng {
     @Test
     public void ChangePassword06() throws InterruptedException {
 //        Thread.sleep(600);
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
 //        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa123456789101112131415@");
@@ -121,7 +123,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword07() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("aa12345#");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("aa12345#");
@@ -134,7 +136,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword08() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("AA12345#");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("AA12345#");
@@ -147,7 +149,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword09() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Bushraa@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Bushraa@");
@@ -160,7 +162,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword10() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("12345678@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("12345678@");
@@ -173,7 +175,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword11() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("AAAAAAAA");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("AAAAAAAA");
@@ -186,7 +188,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword12() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("########");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("########");
@@ -199,7 +201,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword13() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa12345678910111213@");
+        Login( "assurefour@four.com", "Aa12345678910111213@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa1BbCc@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Aa1BbCc@");
@@ -212,7 +214,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword14() throws InterruptedException {
-        Login("gabana2035@ahieh.com", "Aa1BbCc@");
+        Login("assurefour@four.com", "Aa1BbCc@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("12345678@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("12345678@");
@@ -225,7 +227,7 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void ChangePassword15() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
+        Login( "assurefour@four.com", "Aa1BbCc@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changePasswordButton"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword"))).sendKeys("Aa123456@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("newPassword2"))).sendKeys("Aa1234567@");
@@ -238,16 +240,16 @@ public class EditProfile extends testconfigng {
     }
     @Test
     public void verifyEmail()  {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
+        Login( "assurefour@four.com", "Aa1BbCc@");
         driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
-        String readonlyAttribute = driver.findElement(By.id("email")).getAttribute("gabana2035@ahieh.com");
+        String readonlyAttribute = driver.findElement(By.id("email")).getAttribute("assurefour@four.com");
         Assert.assertNull(readonlyAttribute, "Email field is not read-only.");
         System.out.println(readonlyAttribute);
 
     }
     @Test
     public void EditUserName1() throws InterruptedException {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
+        Login( "assurefour@four.com", "Aa1BbCc@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-dark rounded-circle']"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).clear();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("1user");
@@ -263,8 +265,6 @@ public class EditProfile extends testconfigng {
     public void EditUserName2() throws InterruptedException {
 
         Login( "1user", "Aa1BbCc@");
-
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-dark rounded-circle']"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).clear();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("Bushraa");
@@ -283,9 +283,8 @@ public class EditProfile extends testconfigng {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("bushra_");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-primary rounded-circle']"))).click();
         Thread.sleep(100);
-        String ExpectedDesplayMaseege= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='text-danger']"))).getText();
         String actualDesplayMaseege= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']"))).getText();
-        Assert.assertEquals(actualDesplayMaseege, ExpectedDesplayMaseege);
+        Assert.assertEquals(actualDesplayMaseege, "Username must not end with special characters of -._");
         System.out.println(actualDesplayMaseege);
     }
     @Test
@@ -298,9 +297,8 @@ public class EditProfile extends testconfigng {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("bushra-");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-primary rounded-circle']"))).click();
         Thread.sleep(100);
-        String ExpectedDesplayMaseege = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='text-danger']"))).getText();
         String actualDesplayMaseege = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']"))).getText();
-        Assert.assertEquals(actualDesplayMaseege, ExpectedDesplayMaseege);
+        Assert.assertEquals(actualDesplayMaseege, "Username must not end with special characters of -._");
         System.out.println(actualDesplayMaseege);
     }
     @Test
@@ -312,9 +310,8 @@ public class EditProfile extends testconfigng {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("bushra@");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-primary rounded-circle']"))).click();
         Thread.sleep(100);
-        String ExpectedDesplayMaseege= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='text-danger']"))).getText();
         String actualDesplayMaseege= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']"))).getText();
-        Assert.assertEquals(actualDesplayMaseege, ExpectedDesplayMaseege);
+        Assert.assertEquals(actualDesplayMaseege, "Username must not end with special characters of -._");
         System.out.println(actualDesplayMaseege);
     }
 
@@ -327,9 +324,8 @@ public class EditProfile extends testconfigng {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("bushra.");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-primary rounded-circle']"))).click();
         Thread.sleep(100);
-        String ExpectedDesplayMaseege= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='text-danger']"))).getText();
         String actualDesplayMaseege= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast fade bg-success border-0 show text-white']"))).getText();
-        Assert.assertEquals(actualDesplayMaseege, ExpectedDesplayMaseege);
+        Assert.assertEquals(actualDesplayMaseege, "Username must not end with special characters of -._");
         System.out.println(actualDesplayMaseege);
     }
 
@@ -384,7 +380,21 @@ public class EditProfile extends testconfigng {
         Assert.assertEquals(actualDesplayMaseege, "User information updated successfully");
         System.out.println(actualDesplayMaseege);
     }
+    @Test
+    public void EditUserName11() throws InterruptedException {
+        Login("bushra@alharbi", "Aa1BbCc@");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='btn btn-ghost-dark rounded-circle']"))).click();
+        By username=By.id("username");
+        driver.findElement(username).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+        By Click=By.xpath("//button[@class='btn btn-ghost-primary rounded-circle']");
+        driver.findElement(Click).click();
+//        By Cancle=By.xpath("//button[@class='btn btn-ghost-danger rounded-circle']");
+//        driver.findElement(Cancle).click();
+        By actualDesplayMaseege=By.xpath("//span[@class='text-danger']");
+        String DesplayMaseege=driver.findElement(actualDesplayMaseege).getText();
+        Assert.assertEquals(DesplayMaseege, "Username cannot be empty");
+        System.out.println(DesplayMaseege);
+    }
 }
-
 
 

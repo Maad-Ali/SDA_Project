@@ -22,11 +22,11 @@ public class verifyUsernameAndRole  extends testconfigng {
         driver.findElement(loginButton).click();
 
     }@Test
-    public void verifyUsernameAndRoleDisplayedInDropdown()  {
-        Login( "gabana2035@ahieh.com", "Aa1BbCc@");
+    public void verifyUsernameAndRoleDisplayedInDropdown() throws InterruptedException {
+        Login( "assurewise@assurewise.com", "EJWO_PWr17ePelV");
         driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
         String verifyUsernameAndRoleDisplayed= driver.findElement(username_role).getText();
-        Assert.assertEquals(verifyUsernameAndRoleDisplayed,"gabana2035@ahieh.com | Business Owner");
+        Assert.assertEquals(verifyUsernameAndRoleDisplayed,"assurewise@assurewise.com | Business Owner");
         System.out.println("verifyUsernameAndRoleDisplayed");
     }
 }

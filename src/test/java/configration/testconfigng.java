@@ -29,10 +29,10 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 
-public abstract class testconfigng {
-    protected WebDriver driver;
+public abstract class testconfigng  {
+    protected static  WebDriver driver;
     protected Wait<WebDriver> wait;
-   // protected static Logger logger;
+    protected static Logger logger;
     protected ActionsBot bot;
 //    protected static JSONObject testData;
 
@@ -44,7 +44,7 @@ public abstract class testconfigng {
     }
 
     @Parameters({ "target-browser" })
-    @BeforeClass
+    @BeforeMethod
     public void beforeMethod(@Optional("chrome") String targetBrowser){
         //logger.info("Opening "+targetBrowser+" Browser");
 
@@ -58,15 +58,15 @@ public abstract class testconfigng {
 
         driver.manage().window().maximize();
 
-        logger.info("Configuring 5 second explicit wait");
+//        logger.info("Configuring 5 second explicit wait");
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        bot = new ActionsBot(driver, wait, logger);
+        bot = new ActionsBot(driver,wait,logger);
     }
 
     @Step("Terminating target browser")
     @AfterMethod
     public void browserTermination(){
-        logger.info("Quitting Browser");
+//        logger.info("Quitting Browser");
         driver.quit();
     }
 }

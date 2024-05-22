@@ -1,6 +1,7 @@
 package Hadeel.US_0011;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,8 +17,8 @@ public class TC_0005 {
     WebDriver driver;
     WebDriverWait wait;
 
-    public static String email = "pehicej808@bsomek.com";
-    public static String password = "tAORf9zTeyKSP4R";
+    public static String email = "assurewise@assurewise.com";
+    public static String password = "EJWO_PWr17ePelV";
 
     public static String name = "Human Resource";
     public static String Shortname = "HR";
@@ -28,14 +29,14 @@ public class TC_0005 {
 
     @BeforeClass
     public void beforeMethod() {
-        driver = new EdgeDriver();
+        driver = new ChromeDriver();
         driver.get("https://qa-gm3.quaspareparts.com/");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
     }
 
     @Test
-    public void TC0005() {
+    public void TC0005() throws InterruptedException {
         By LoginPage = By.xpath("//a[@href='https://qa-gm3.quaspareparts.com/a3m/']");
         By usernameInput = By.xpath("//input[@id='username']");
         By passwordInput = By.xpath("//input[@id='password']");

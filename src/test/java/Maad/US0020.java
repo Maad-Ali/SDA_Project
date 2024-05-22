@@ -27,7 +27,7 @@ public class US0020 {
     }
 
     @Test
-    public void Login() throws InterruptedException {
+    public void US_20Test() throws InterruptedException {
 
         driver.navigate().to("https://qa-gm3.quaspareparts.com/");
         By LoginButton = By.className("login-button");

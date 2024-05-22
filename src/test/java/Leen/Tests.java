@@ -47,7 +47,7 @@ public abstract class Tests {
 
         logger.info("Configuring 5 second explicit wait");
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        bot = new ActionsBot(driver, wait, logger);
+        bot = new ActionsBot(driver, wait, logger);// , logger
     }
 
     @AfterMethod

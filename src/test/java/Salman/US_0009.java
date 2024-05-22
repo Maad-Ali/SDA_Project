@@ -1,18 +1,17 @@
 package Salman;
 
 import configration.testconfigng;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import engine.ActionsBot;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -26,7 +25,7 @@ public class US_0009 extends testconfigng {
     By departmentLink = By.id("link6");
     By editButton = By.xpath("//button[contains(@class,'btn btn-info float-end text-white')]");
     By SaveButton = By.xpath("//button[contains(@class,'btn btn-info text-white px-3')]");
-    String url = "https://qa-gm3.quaspareparts.com/a3m/#/department/1715254322840616/1859";
+    String url = "https://qa-gm3.quaspareparts.com/a3m/#/department/1716291130693086/129";
 
     // delete test BY
     By deleteButton = By.xpath("//button[contains(@class,'btn btn-danger text-light fw-bold float-end')]");
@@ -37,15 +36,16 @@ public class US_0009 extends testconfigng {
 
     Boolean result = false;
 
-    private void Login() {
+    static void Login() {
+
         driver.navigate().to("https://qa-gm3.quaspareparts.com/");
         By LoginButton = By.className("login-button");
         driver.findElement(LoginButton).click();
         By Username = By.id("username");
         By Password = By.id("password");
         By SignIn = By.tagName("button");
-        driver.findElement(Username).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(Password).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(Username).sendKeys("assurewise@assurewise.com");
+        driver.findElement(Password).sendKeys("EJWO_PWr17ePelV");
         driver.findElement(SignIn).click();
     }
 
@@ -101,7 +101,8 @@ public class US_0009 extends testconfigng {
         By DepType = By.name("group_type_id");
         String getDepartmentType = driver.findElement(DepType).getText();
         Assert.assertEquals(getDepartmentType, "Remote Unit");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
+
 
     }
 
@@ -136,7 +137,7 @@ public class US_0009 extends testconfigng {
             List<WebElement> allListofNoPriority = driver.findElements(listdepartment);
             for (WebElement element : allListofNoPriority) {
 
-                if (element.getText() != "salman") {
+                if (!Objects.equals(element.getText(),"salman")) {
                     System.out.println("Test case should be pass");
                     result = true;
 
@@ -154,6 +155,4 @@ public class US_0009 extends testconfigng {
 
 
 }
-
-
 

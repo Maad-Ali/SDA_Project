@@ -16,7 +16,7 @@ public class ActionsBot {
     private final Wait<WebDriver> wait;
     private final Logger logger;
 
-    public ActionsBot(WebDriver driver, Wait<WebDriver> wait, Logger logger) {
+    public ActionsBot(WebDriver driver, Wait<WebDriver> wait, Logger logger ) {//
         this.driver = driver;
         this.wait = wait;
         this.logger = logger;

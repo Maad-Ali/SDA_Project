@@ -34,8 +34,8 @@ public class TC_0001 {
         // Submit the login form
         driver.findElement(By.className("login-button")).click();
         // Find and fill in the username and password fields
-        driver.findElement(By.id("username")).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(By.id("password")).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(By.id("username")).sendKeys("assurewise@assurewise.com");
+        driver.findElement(By.id("password")).sendKeys("EJWO_PWr17ePelV");
         // Submit the sign-in form
         driver.findElement(By.tagName("button")).click();
         // Navigate to the Company module.

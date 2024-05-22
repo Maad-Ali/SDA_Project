@@ -25,8 +25,8 @@ public class US_0017 {
         By username = By.id("username");
         By password = By.id("password");
         By LoginButton = By.tagName("button");
-        driver.findElement(username).sendKeys("pehicej808@bsomek.com");
-        driver.findElement(password).sendKeys("tAORf9zTeyKSP4R");
+        driver.findElement(username).sendKeys("assurewise@assurewise.com");
+        driver.findElement(password).sendKeys("EJWO_PWr17ePelV");
         driver.findElement(LoginButton).click();
 
         By Elements = By.xpath("(//li[@class='list-group-item'])[1]");
@@ -56,9 +56,9 @@ public class US_0017 {
                 throw new RuntimeException(e);}
 
             By selectDepartment = By.xpath("//div[contains(@class,' css-1xc3v61-indicatorContainer')]");
-            By selectDepartmentTeam3 = By.xpath("//div[text()='Team3']");
+//            By selectDepartmentTeam3 = By.xpath("//div[text()='Team3']");
             driver.findElement(selectDepartment).click();
-            driver.findElement(selectDepartmentTeam3).click();
+//            driver.findElement(selectDepartmentTeam3).click();
 
 
             WebElement emailField = driver.findElement(By.id("email"));
@@ -78,7 +78,6 @@ public class US_0017 {
 
             return true;
         });
-
 
         // Verify success message
         wait.until(webDriver -> {
